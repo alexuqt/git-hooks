@@ -3,7 +3,7 @@ import "dotenv/config";
 import express from "express";
 import db from "./config/mongo";
 import { router } from "./routes";
-// hooks!
+// hook!
 
 const PORT = process.env.PORT || 3001;  
 const app = express();
