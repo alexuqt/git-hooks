@@ -1,26 +1,22 @@
-We are going to use: 
+# Git hooks demo
 
- - Visual Studio Code as an editor: https://code.visualstudio.com/Download 
- - MongoDB Community Server: https://www.mongodb.com/try/download/community 
- - Thunder Client as an extension in Visual Studio Code to run your REST API locally. 
+## Commit messages
 
-IMPORTANT COMMANDS BEFORE USING VISUAL STUDIO CODE
---------------------------------------------------
+Format: 
+```
+  feat: add hat wobble
+  ^--^  ^------------^
+  |     |
+  |     +-> Summary in imperative tense.
+  |
+  +-------> Type
+```
 
-- Check versions
-
-    node -v \
-    npm -v
-
-- Global installation 
-
-    npm i typescript -g \
-    npm i ts-node -g \
-    npm i nodemon -g
-
-- Prepare project 
-
-    tsc --init \
-    npm init -y \
-    npm i express cors dotenv multer mongoose \
-    npm i @types/express @types/cors @types/dotenv @types/multer @types/mongoose -D
+Types:
+- `feat`: (new feature for the user, not a new feature for build script)
+- `fix`: (bug fix for the user, not a fix to a build script)
+- `docs`: (changes to the documentation)
+- `style`: (formatting, missing semi colons, etc; no production code change)
+- `refactor`: (refactoring production code, eg. renaming a variable)
+- `test`: (adding missing tests, refactoring tests; no production code change)
+- `chore`: (updating grunt tasks etc; no production code change)
