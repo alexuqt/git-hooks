@@ -12,4 +12,3 @@ app.use(express.json());
 app.use(router);
 db().then(() => console.log("Connection is ready"));
 app.listen(PORT, () => console.log(`Hey! Listening por el puerto ${PORT}`));
-console.log('hola')
