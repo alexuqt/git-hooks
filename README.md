@@ -1,6 +1,16 @@
 # Git hooks demo
 
-## Commit messages
+## Git hooks used in this demo
+- pre-commit
+  - avoid commit to main
+  - avoid console.log
+- commit-msg
+  - enforce conventional commits
+- post-commit
+  - automatic push to current branch
+
+
+### Conventional commit messages
 
 Format: 
 ```
