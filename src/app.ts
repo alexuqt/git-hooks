@@ -3,7 +3,7 @@ import "dotenv/config";
 import express from "express";
 import db from "./config/mongo";
 import { router } from "./routes";
-// hook!sisas
+// hook!sisass
 
 const PORT = process.env.PORT || 3001;  
 const app = express();
