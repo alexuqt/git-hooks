@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# 1. EVITAR FER COMMIT A MAIN O MASTER
+
+current_branch=`git rev-parse --abbrev-ref HEAD`
+
+if [[ $current_branch =~ master|main ]]; then
+
+message="Please don't commit directly to $current_branch."
+
+echo -e "\033[1;31mERROR: $message\033[0m";
+
+exit 1
+
+fi
+
+
+
+# 2. EVITAR CONSOLE.LOGS
+
+exec 1>&2 # Redirect output to stderr.
+
+exec < /dev/tty # enable user input
+
+consoleregexp='console.log'
+
+if test $(git diff --cached | grep $consoleregexp | wc -l) != 0
+then 
+  exec git diff --cached | grep -ne $consoleregexp
+  echo "****************************************************"
+	read -p "Has afegit alguns console.log. Vols continuar? (y/n) " yn
+  echo $yn | grep ^[Yy]$
+  if [ $? -eq 0 ] 
+  then
+    exit 0; # Continue
+  else
+    exit 1; # Abort
+  fi
+fi

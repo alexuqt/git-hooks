@@ -1,0 +1,8 @@
+#!/bin/sh
+
+current_branch=`git rev-parse --abbrev-ref HEAD`
+
+echo "****************************************************"
+echo "Fent push automàticament a la branca $current_branch"
+
+git push -u origin $current_branch
